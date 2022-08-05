@@ -5,11 +5,7 @@ function obtenerMayor(x, y) {
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
-  if (x>y) {
-  return x;
-  } else if (x<y) {
-  return y;
-  } else if (x === y) {
+  if (x > y) {
   return x;
   } else{
   return y;
@@ -23,14 +19,14 @@ function mayoriaDeEdad(edad) {
   //Determinar si la persona según su edad puede ingresar a un evento.
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
-  if (edad >= 18) {
+  if (edad > 17) {
     return "Allowed"
   } else{
     return "Not allowed"
   }
 }
   
-console.log(mayoriaDeEdad(18)) // Retorna Allowed por que el numero es mayor o igual a 18
+console.log(mayoriaDeEdad(18)) // Retorna Allowed por que el numero es mayor a 18
 
 function conection(status) {
   //Recibimos un estado de conexión de un usuario representado por un valor numérico. 
@@ -191,30 +187,81 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
+
+  if (numero ===2) {
+    return true;
+  } else if (numero <2) {
+    return false;
+  }for (let i=2 ; i < numero; i ++) {
+    if (numero % i ===0){
+      return false;
+    }
+  }
+  return true;
 }
+
+console.log (esPrimo(1));
 
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-
+  if(valor === true) {
+    return "soy verdadero";
+  }else {
+    return "Soy falso";
+  }
 }
+
+console.log (esVerdadero());
+
 
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-  
+
+  let tabla = [];
+
+  for (let i=0 ; i < 11 ; i++) {
+    tabla.push (i * 6);
+  }
+  return tabla;
 }
+
+console.log (tablaDelSeis(6));
+
+
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
   
+
+  if (numero >99 && numero <1000) {
+    return true;
+  }else {
+    return false;
+  }
+  
 }
+
+console.log (tieneTresDigitos(99));
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+
+  let count = 8;
+  let result = 0;
+
+  do{
+    result = result + 5;
+    count = count -1;
+  }while (count !==0)
+  return (result + numero);
 }
+
+console.log (doWhile(1));
+
